@@ -15072,7 +15072,8 @@ solution: 242 	 model: 242
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><code>6.</code> If we were given a new user, which of the above functions would you be able to use to make recommendations?  Explain.  Can you think of a better way we might make recommendations?  Use the cell below to explain a better method for new users.</p>
-<p>get_top_article_ids would be a better way for us to make recommendations because the user didn't view any articles before and we don't have any information about user</p>
+<p>get_top_article_ids would be a better way for us to make recommendations because the user didn't view any articles before and we don't have any information about user. Since a new user has no browsing history of the articles, we can't look for similarities with other users. Thus, the best way could be to use "get_top_article" which is a rank-based recommendation of the most popular articles for all the user interactions.</p>
+<p>The tradeoff of this is that it may skew our recommendation algorithm later on as it would see users who have interacted with all the same articles and think they are similar. We can compare the information from a new user with information about our current users and find users with a similar profile, thereby increasing the chances of making better recommendations.</p>
 
 </div>
 </div>
@@ -15482,7 +15483,8 @@ solution: 242 	 model: 242
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Provide your response here.</strong></p>
+<p><strong>Answer</strong></p>
+<p>We don't need FunkSVD because of the absence of NaN in the user_item_matrix. During the lectures, user_item_matrix was made by user ratings. The absence of ratings were represented by NaNs. For this reason, the matrix was very sparse and needed a different approach. In our case, the way we model user-item interactions is simplier (0-1) and does not include the presence of NaNs.</p>
 
 </div>
 </div>
